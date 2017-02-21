@@ -13,22 +13,21 @@ import javax.servlet.http.HttpServletResponse;
 public class AdminACLInterceptor extends HandlerInterceptorAdapter {
     @Autowired
     protected AdminSession session;
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
         String userAgent = request.getHeader("user-agent");
         String AJAX = request.getHeader("X-Requested-With");
 
-        if(!session.isLogined()){
-
+        if (!session.isLogined()) {
             if (null != AJAX && AJAX.equals("XMLHttpRequest")) {
                 throw new UnauthorizedException();
             } else {
                 response.sendRedirect("/admin/login");
                 return false;
             }
-
-        } else{
+        } else {
             return super.preHandle(request, response, handler);
         }
 
