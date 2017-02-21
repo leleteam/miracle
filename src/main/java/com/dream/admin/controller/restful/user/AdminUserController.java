@@ -1,12 +1,12 @@
-package com.dream.admin.controller.restful.index;
+package com.dream.admin.controller.restful.user;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/admin/index")
-public class AdminIndexController {
+@RequestMapping("/admin/user")
+public class AdminUserController {
 
     @GetMapping
     public String indexPage() {

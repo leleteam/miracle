@@ -1,6 +1,6 @@
 package com.dream.utils;
 
-import com.yimei.finance.utils.creator.CreatorFactory;
+import com.dream.utils.creator.CreatorFactory;
 import org.dozer.CustomConverter;
 
 import java.util.Locale;

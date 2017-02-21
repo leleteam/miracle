@@ -1,7 +1,7 @@
 package com.dream.utils;
 
-import com.yimei.finance.common.representation.enums.EnumCommonError;
-import com.yimei.finance.exception.BusinessException;
+import com.dream.boot.exception.BusinessException;
+import com.dream.common.dto.enums.EnumCommonError;
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
@@ -65,7 +65,7 @@ public class CodeUtils {
                     pinyinName += PinyinHelper.toHanyuPinyinStringArray(nameChar[i], defaultFormat)[0].substring(0, 1);
                 } catch (BadHanyuPinyinOutputFormatCombination badHanyuPinyinOutputFormatCombination) {
                     badHanyuPinyinOutputFormatCombination.printStackTrace();
-                    throw new BusinessException(EnumCommonError.Admin_System_Error);
+                    throw new BusinessException(EnumCommonError.系统出错.toString());
                 }
             } else {
                 if (upper) {

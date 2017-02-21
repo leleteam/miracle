@@ -1,10 +1,10 @@
 package com.dream.utils;
 
-import com.yimei.finance.common.representation.enums.EnumCommonError;
-import com.yimei.finance.common.representation.file.AttachmentObject;
-import com.yimei.finance.common.service.file.Storage;
-import com.yimei.finance.common.service.file.StorageException;
-import com.yimei.finance.exception.BusinessException;
+import com.dream.boot.exception.BusinessException;
+import com.dream.common.dto.enums.EnumCommonError;
+import com.dream.common.dto.file.FileDTO;
+import com.dream.common.dto.file.Storage;
+import com.dream.common.dto.file.StorageException;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.FileUtils;
@@ -17,9 +17,6 @@ import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by hary on 16/3/30.
- */
 public class StoreUtils {
 
 
@@ -48,14 +45,7 @@ public class StoreUtils {
         return file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf(".") + 1);
     }
     
-    /**
-     * @param storage
-     * @param file
-     * @param bucket
-     * @return
-     * @throws IOException
-     */
-    public static AttachmentObject save(Storage storage, MultipartFile file, String bucket) throws IOException {
+    public static FileDTO save(Storage storage, MultipartFile file, String bucket) throws IOException {
         List<String> unSupportFileSuffix = Arrays.asList(new String[] {"exe", "dmg", "sh", "dat", "com", "sys"});;
         String suffix = getFileType(file);
         if (unSupportFileSuffix.contains(suffix)) throw new BusinessException(EnumCommonError.NotSupported_File_Type(suffix));
@@ -68,7 +58,7 @@ public class StoreUtils {
             logger.error("上传文件出错:{}",e.getMessage());
             throw new RuntimeException("can not save");
         }
-        return new AttachmentObject(fileOriginName, suffix, fileUrl);
+        return new FileDTO(fileOriginName, suffix, fileUrl);
     }
 
 }
