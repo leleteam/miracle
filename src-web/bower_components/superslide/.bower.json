@@ -1,0 +1,28 @@
+{
+  "name": "superslide",
+  "homepage": "https://github.com/chinakids/superslide",
+  "authors": [
+    "chinakids <494063570@qq.com>"
+  ],
+  "main": "jquery.SuperSlide.2.1.1.js",
+  "keywords": [
+    "slide"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "4f5f577d84",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "4f5f577d847d73af2fcedeb6d929a689158c9737"
+  },
+  "_source": "https://github.com/chinakids/superslide.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/chinakids/superslide.git"
+}
