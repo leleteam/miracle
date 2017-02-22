@@ -1,0 +1,13 @@
+@import '../helpers/_mixins';
+
+.wrapper{
+  min-height:calc(100% - 212px );
+  min-height:500px/9;
+  *min-height:500px;
+  padding:10px 0;
+  background:#fff;
+}
+
+.red_color {
+  color: red;
+}

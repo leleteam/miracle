@@ -28,12 +28,12 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
         registry.addResourceHandler("/bower_components/**").addResourceLocations("file:./src-web/bower_components/");
-        registry.addResourceHandler("/styles/site/**").addResourceLocations("file:./src-web/site/app/styles/");
-        registry.addResourceHandler("/styles/admin/**").addResourceLocations("file:./src-web/admin/app/styles/");
-        registry.addResourceHandler("/images/site/**").addResourceLocations("file:./src-web/site/app/images/");
-        registry.addResourceHandler("/images/admin/**").addResourceLocations("file:./src-web/admin/app/images/");
-        registry.addResourceHandler("/scripts/site/**").addResourceLocations("file:./src-web/site/app/scripts/");
-        registry.addResourceHandler("/scripts/admin/**").addResourceLocations("file:./src-web/admin/app/scripts/");
+        registry.addResourceHandler("/site/styles/**").addResourceLocations("file:./src-web/site/app/styles/");
+        registry.addResourceHandler("/admin/styles/**").addResourceLocations("file:./src-web/admin/app/styles/");
+        registry.addResourceHandler("/site/images/**").addResourceLocations("file:./src-web/site/app/images/");
+        registry.addResourceHandler("/admin/images/**").addResourceLocations("file:./src-web/admin/app/images/");
+        registry.addResourceHandler("/site/scripts/**").addResourceLocations("file:./src-web/site/app/scripts/");
+        registry.addResourceHandler("/admin/scripts/**").addResourceLocations("file:./src-web/admin/app/scripts/");
         registry.addResourceHandler("/files/**").addResourceLocations("file:../files/");
         registry.addResourceHandler("/swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");

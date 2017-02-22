@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>用户注册</title>
+    <link rel="stylesheet" href="/site/styles/user/register.css">
+</head>
+<body>
+<h1>用户注册</h1>
+<div class="content">
+    <form class="form-horizontal" id="registerForm">
+        <div class="form-group">
+            <label class="col-sm-5 control-label"><span class="color-">*</span>用户名：</label>
+            <div class="col-sm-4 no-padding-left">
+                <input type="text" class="form-control" placeholder="请输入手机号码" name="securePhone" id="securePhone" maxlength="11"/>
+            </div>
+            <div class="col-sm-3 info">
+                <div class="info-wrap">请输入11位手机号码</div>
+            </div>
+            <div class="col-sm-4 col-sm-offset-5 error-height"></div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-5 control-label"><span class="txt-warning">*</span>设置密码：</label>
+            <div class="col-sm-4 no-padding-left">
+                <input type="password" class="form-control" placeholder="请设置密码" name="password" id="password" maxlength="16"/>
+            </div>
+            <div class="col-sm-3 info">
+                <div class="info-wrap">
+                    <ul>
+                        <li>6-16个字符、字母、数字、特殊符号</li>
+                        <li>至少两种以上组合</li>
+                        <li>字母区分大小写</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4 col-sm-offset-5 error-height"></div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-5 control-label"><span class="txt-warning">*</span>确认密码：</label>
+            <div class="col-sm-4 no-padding-left">
+                <input type="password" class="form-control" placeholder="请输入确认密码" name="confirmPassword" id="confirmPassword" maxlength="16"/>
+            </div>
+            <div class="col-sm-4 col-sm-offset-5 error-height"></div>
+        </div>
+        <div class="form-group error-hidden">
+            <label class="col-sm-5 control-label"><span class="txt-warning">*</span>图形验证码：</label>
+            <div class="col-sm-4 no-padding-left">
+                <input type="text" class="form-control" maxlength="6" placeholder="请输入图形验证码" name="imgCode" id="imgCode"/>
+                <div class="img-code">
+                    <a href="#"><img src="/loadImgCode" id="verifycode" width="100" height="28"/></a>
+                </div>
+            </div>
+            <div class="col-sm-2 no-padding-left cannot-see">
+                <p>看不清楚？</p>
+                <a href="#" id="changeImgCode">换一张</a>
+            </div>
+            <div class="col-sm-4 col-sm-offset-5 error-height"></div>
+        </div>
+        <div class="form-group error-hidden">
+            <label class="col-sm-5 control-label"><span class="txt-warning">*</span>手机验证码：</label>
+            <div class="col-sm-4 no-padding-left margin-bottom-2">
+                <input type="text" class="form-control" maxlength="6" placeholder="请输入手机验证码" name="authCode" id="authCode"/>
+                <div class="yzm disabled" id="yzm">获取验证码</div>
+                <div class="col-sm-12">
+                    <div class="yzm-tips" id="yzmTips">验证码已发送至你的手机，请查收！</div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-sm-offset-5 error-height"></div>
+            <div id="authCode-error-other" class="display-none col-sm-4 col-sm-offset-5 authCode-error-other">请输入6位手机验证码</div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-5 pull-left no-padding-left">
+                <label class="pull-left no-margin-bottom">
+                    <input type="checkbox" class="margin-top-0" name="agreement" id="argument"/>
+                    <span class="vertical-middle">我已阅读并同意<a href="#" id="agreeBtn">《注册协议》</a>及<a href="#" id="secretBtn">《入市交易协议》</a></span>
+                </label>
+                <div class="col-sm-3 agreement"></div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-5 col-sm-4 no-padding-left">
+                <input type="submit" class="btn btn-blue disabled" value="下一步" id="submitBtn"/>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

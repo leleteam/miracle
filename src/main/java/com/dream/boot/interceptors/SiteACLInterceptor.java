@@ -22,8 +22,8 @@ public class SiteACLInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
         String currentUrl = request.getRequestURL().toString();
 
-        if (currentUrl.endsWith("/login")) {
-            response.sendRedirect("/site/login");
+        if (currentUrl.startsWith("/login")) {
+            response.sendRedirect("/login");
             return false;
         } else {
             if (handler instanceof HandlerMethod) {
@@ -32,7 +32,7 @@ public class SiteACLInterceptor extends HandlerInterceptorAdapter {
 
                 if (method.getMethodAnnotation(LoginRequired.class) != null || method.getBeanType().getDeclaredAnnotation(LoginRequired.class) != null) {
                     if (!session.isLogined()) {
-                        response.sendRedirect("/site/login");
+                        response.sendRedirect("login");
                         return false;
                     }
                 }
