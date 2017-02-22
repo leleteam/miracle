@@ -3,9 +3,6 @@ package com.dream.utils;
 
 import org.apache.commons.lang3.StringUtils;
 
-/**
- * Created by joe on 2/9/15.
- */
 public class Where {
     public static final String script = "<script>";
     public static final String $script = "</script>";

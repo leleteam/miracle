@@ -8,9 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.Map;
 
-/**
- * Created by hary on 16/3/30.
- */
 public class WebUtils {
 
     static public void doDownloadFile(File file,  HttpServletResponse response) throws IOException {
