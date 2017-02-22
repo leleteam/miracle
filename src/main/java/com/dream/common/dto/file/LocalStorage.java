@@ -7,15 +7,9 @@ import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-/**
- * Created by hary on 16/3/30.
- */
 @Service
 public class LocalStorage implements Storage {
 
-    /**
-     * @param localPath - 文件上传的root目录
-     */
     @Value("${filePath}")
     private String localPath;
 
@@ -76,11 +70,6 @@ public class LocalStorage implements Storage {
         }
     }
 
-    /**
-     * 比如:  /home/hary/tmp/a/b/c/d/e/notes.txt:  会创建所有的diectory
-     *
-     * @param file
-     */
     private void makeDirectory(File file) {
         if (!file.getParentFile().exists()) {
             makeDirectory(file.getParentFile());
@@ -88,9 +77,6 @@ public class LocalStorage implements Storage {
         file.mkdir();
     }
 
-    /**
-     * 获取服务器 files 目录绝对路径
-     */
     public String getServerFileRootPath() {
         return localPath;
     }

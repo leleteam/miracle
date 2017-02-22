@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Date;
 
-@ApiModel(description = "附件对象")
+@ApiModel(description = "文件对象")
 @Data
 @NoArgsConstructor
 public class FileDTO implements Serializable {

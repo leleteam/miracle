@@ -9,9 +9,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-/**
- * Created by joe on 1/11/15.
- */
 public class PDF {
 
     public static PegDownProcessor processor = new PegDownProcessor();
