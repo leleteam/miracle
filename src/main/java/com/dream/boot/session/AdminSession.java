@@ -1,6 +1,6 @@
 package com.dream.boot.session;
 
-import com.dream.admin.dto.user.AdminUser;
+import com.dream.admin.dto.user.AdminUserDTO;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
@@ -10,13 +10,13 @@ import java.io.Serializable;
 @Component
 @Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class AdminSession implements Serializable {
-    protected AdminUser user;
+    protected AdminUserDTO user;
 
-    public AdminUser getUser() {
+    public AdminUserDTO getUser() {
         return user;
     }
 
-    public boolean login(AdminUser user) {
+    public boolean login(AdminUserDTO user) {
         this.user = user;
         return true;
     }

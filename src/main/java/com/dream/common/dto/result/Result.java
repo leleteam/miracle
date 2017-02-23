@@ -1,5 +1,6 @@
 package com.dream.common.dto.result;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 //@JsonIgnoreProperties(ignoreUnknown = true)
-//@JsonInclude
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Result<T> implements Serializable {
     private boolean success;
     private Error error;
